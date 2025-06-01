@@ -1,9 +1,9 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { EstudianteService } from './estudiante.service';
 import { CreateEstudianteDto } from './dto/create-estudiante.dto';
 import { UpdateEstudianteDto } from './dto/update-estudiante.dto';
 
-@Controller('estudiante')
+@Controller('estudiantes')
 export class EstudianteController {
   constructor(private readonly estudianteService: EstudianteService) {}
 
@@ -13,13 +13,18 @@ export class EstudianteController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Query() query: any) {
     return this.estudianteService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.estudianteService.findOne(+id);
+  }
+
+  @Get('email/:correo')
+  findByEmail(@Param('correo') correo: string) {
+    return this.estudianteService.findByEmail(correo);
   }
 
   @Patch(':id')
