@@ -12,6 +12,7 @@ export class DiaHoraService {
   constructor(
     @InjectRepository(DiaHora)
     private readonly diaHoraRepository: Repository<DiaHora>,
+    @InjectRepository(Bloque)
     private readonly bloqueRepository: Repository<Bloque>
   ) {}
 

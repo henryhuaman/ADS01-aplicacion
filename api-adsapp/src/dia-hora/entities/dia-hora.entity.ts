@@ -1,6 +1,7 @@
 import { Bloque } from "src/bloque/entities/bloque.entity";
-import { Column, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity('dia_hora')
 export class DiaHora {
 @PrimaryGeneratedColumn()
   idDiaHora: number;
