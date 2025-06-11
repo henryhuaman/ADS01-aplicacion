@@ -3,7 +3,7 @@ import { EvaluacionService } from './evaluacion.service';
 import { CreateEvaluacionDto } from './dto/create-evaluacion.dto';
 import { UpdateEvaluacionDto } from './dto/update-evaluacion.dto';
 
-@Controller('evaluacion')
+@Controller('evaluaciones')
 export class EvaluacionController {
   constructor(private readonly evaluacionService: EvaluacionService) {}
 
@@ -20,6 +20,11 @@ export class EvaluacionController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.evaluacionService.findOne(+id);
+  }
+
+  @Get('estudiante/:id')
+  findByEstudiante(@Param('id') id: string) {
+    return this.evaluacionService.findByEstudiante(+id);
   }
 
   @Patch(':id')

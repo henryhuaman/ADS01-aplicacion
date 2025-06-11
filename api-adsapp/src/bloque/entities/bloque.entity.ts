@@ -1,6 +1,7 @@
 import { Curso } from "src/curso/entities/curso.entity";
+import { DiaHora } from "src/dia-hora/entities/dia-hora.entity";
 import { Profesor } from "src/profesor/entities/profesor.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('bloque')
 export class Bloque {
@@ -20,4 +21,7 @@ export class Bloque {
   @ManyToOne(() => Profesor, profesor => profesor.bloques)
   @JoinColumn({ name: 'idProfesor' })
   profesor: Profesor;
+
+  @OneToMany(() => DiaHora, diaHora => diaHora.bloque)
+  diaHoras: DiaHora[];
 }

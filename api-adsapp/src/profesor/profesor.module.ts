@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ProfesorService } from './profesor.service';
 import { ProfesorController } from './profesor.controller';
-import { Type } from 'class-transformer';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Profesor } from './entities/profesor.entity';
 
@@ -9,5 +8,6 @@ import { Profesor } from './entities/profesor.entity';
   imports: [TypeOrmModule.forFeature([Profesor])],
   controllers: [ProfesorController],
   providers: [ProfesorService],
+  exports: [ProfesorService]
 })
 export class ProfesorModule {}

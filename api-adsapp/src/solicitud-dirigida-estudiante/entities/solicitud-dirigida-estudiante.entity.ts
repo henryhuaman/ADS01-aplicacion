@@ -9,7 +9,7 @@ export class SolicitudDirigidaEstudiante {
     
     @ManyToOne(() => Estudiante)
     @JoinColumn({ name: 'idEstudiante' })
-    interesado: Estudiante;
+    estudiante: Estudiante;
 
     @OneToOne(() => Curso)
     @JoinColumn({ name: 'idCurso' })
@@ -24,9 +24,9 @@ export class SolicitudDirigidaEstudiante {
     @Column({ nullable: true })
     descripcion: string;
     
-    @CreateDateColumn({ type: 'timestamptz' })
+    @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;
     
-    @UpdateDateColumn({ type: 'timestamptz' })
+    @UpdateDateColumn({ type: 'timestamp' })
     updatedAt: Date; 
 }

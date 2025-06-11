@@ -10,6 +10,7 @@ import { CursoEstudianteModule } from './curso-estudiante/curso-estudiante.modul
 import { EvaluacionModule } from './evaluacion/evaluacion.module';
 import { ProfesorModule } from './profesor/profesor.module';
 import { BloqueModule } from './bloque/bloque.module';
+import { DiaHoraModule } from './dia-hora/dia-hora.module';
 
 @Module({
   imports: [
@@ -32,7 +33,8 @@ import { BloqueModule } from './bloque/bloque.module';
     CursoEstudianteModule,
     EvaluacionModule,
     ProfesorModule,
-    BloqueModule
+    BloqueModule,
+    DiaHoraModule
   ],
   //controllers: [AppController],
   //providers: [AppService],

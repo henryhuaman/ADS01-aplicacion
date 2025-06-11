@@ -3,7 +3,7 @@ import { SolicitudDirigidaEstudianteService } from './solicitud-dirigida-estudia
 import { CreateSolicitudDirigidaEstudianteDto } from './dto/create-solicitud-dirigida-estudiante.dto';
 import { UpdateSolicitudDirigidaEstudianteDto } from './dto/update-solicitud-dirigida-estudiante.dto';
 
-@Controller('solicitud-dirigida-estudiante')
+@Controller('solicitudes-dirigida-estudiante')
 export class SolicitudDirigidaEstudianteController {
   constructor(private readonly solicitudDirigidaEstudianteService: SolicitudDirigidaEstudianteService) {}
 
@@ -13,7 +13,7 @@ export class SolicitudDirigidaEstudianteController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Body() query: any) {
     return this.solicitudDirigidaEstudianteService.findAll();
   }
 

@@ -12,7 +12,7 @@ export class Curso {
     nombreCurso: string;
 
     @Column()
-    Descripcion: string;
+    descripcion: string;
 
     @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;

@@ -29,19 +29,21 @@ export class BloqueService {
     if (!profesor) {
       return new HttpException('Profesor no encontrado', HttpStatus.NOT_FOUND);
     }
-
+    /*
     const existeBloque = await this.bloqueRepository.findOne({
     where: {
       curso: { idCurso: createBloqueDto.idCurso },
       fechaInicio: Between(createBloqueDto.fechaInicio, createBloqueDto.fechaFin)
     }
   });
+  
 
     if (existeBloque) {
       return new HttpException(
         `Ya existe un bloque para el curso ${createBloqueDto.idCurso} en el rango de fechas especificado`, HttpStatus.CONFLICT)
     }
-
+    */
+   
     const bloque = this.bloqueRepository.create({
       fechaInicio: createBloqueDto.fechaInicio,
       fechaFin: createBloqueDto.fechaFin,

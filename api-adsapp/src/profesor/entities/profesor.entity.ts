@@ -1,4 +1,5 @@
 import { Bloque } from "src/bloque/entities/bloque.entity";
+import { Evaluacion } from "src/evaluacion/entities/evaluacion.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('profesor')
@@ -23,4 +24,7 @@ export class Profesor {
 
     @OneToMany(() => Bloque, bloque => bloque.profesor)
     bloques: Bloque[];
+
+    @OneToMany(() => Evaluacion, evaluacion => evaluacion.profesor)
+    evaluaciones: Evaluacion[];
 }

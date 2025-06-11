@@ -7,5 +7,5 @@ export class CreateCursoDto {
 
   @IsNotEmpty()
   @IsString()
-  Descripcion: string;
+  descripcion: string;
 }
