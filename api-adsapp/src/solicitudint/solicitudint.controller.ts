@@ -13,7 +13,7 @@ export class SolicitudintController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Body() body: any) {
     return this.solicitudintService.findAll();
   }
 

@@ -28,9 +28,10 @@ export class Solicitudint {
   @Column({ length: 70, nullable: true })
   observacionSolicitud: string;
 
-    @CreateDateColumn({ type: 'timestamptz' })
+    @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;
 
-    @UpdateDateColumn({ type: 'timestamptz' })
+    @UpdateDateColumn({ type: 'timestamp' })
     updatedAt: Date; 
+
 }

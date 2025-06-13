@@ -11,6 +11,7 @@ import { EvaluacionModule } from './evaluacion/evaluacion.module';
 import { ProfesorModule } from './profesor/profesor.module';
 import { BloqueModule } from './bloque/bloque.module';
 import { DiaHoraModule } from './dia-hora/dia-hora.module';
+import { InteresadoPfModule } from './interesado-pf/interesado-pf.module';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { DiaHoraModule } from './dia-hora/dia-hora.module';
     EvaluacionModule,
     ProfesorModule,
     BloqueModule,
-    DiaHoraModule
+    DiaHoraModule,
+    InteresadoPfModule
   ],
   //controllers: [AppController],
   //providers: [AppService],

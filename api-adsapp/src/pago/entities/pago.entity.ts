@@ -14,7 +14,7 @@ export class Pago {
      @Column()
      montoPago: number;
 
-     @Column({ type: 'timestamptz' })
+     @Column({ type: 'timestamp' })
      fechaPago: Date;
 
      @Column()
@@ -23,10 +23,10 @@ export class Pago {
      @Column({ unique: true})
      codigoTransaccionPago: String;
 
-    @CreateDateColumn({ type: 'timestamptz' })
+    @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;
 
-    @UpdateDateColumn({ type: 'timestamptz' })
+    @UpdateDateColumn({ type: 'timestamp' })
     updatedAt: Date;
 
 }

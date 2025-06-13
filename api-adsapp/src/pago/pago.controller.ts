@@ -3,7 +3,7 @@ import { PagoService } from './pago.service';
 import { CreatePagoDto } from './dto/create-pago.dto';
 import { UpdatePagoDto } from './dto/update-pago.dto';
 
-@Controller('pago')
+@Controller('pagos')
 export class PagoController {
   constructor(private readonly pagoService: PagoService) {}
 
@@ -13,7 +13,7 @@ export class PagoController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Body() body: any) {
     return this.pagoService.findAll();
   }
 

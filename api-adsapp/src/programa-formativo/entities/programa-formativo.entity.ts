@@ -1,6 +1,7 @@
-    import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity()
+import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+
+@Entity('programa_formativo')
 export class ProgramaFormativo {
     @PrimaryGeneratedColumn()
     idPrograma: number;
@@ -9,17 +10,12 @@ export class ProgramaFormativo {
     nombrePrograma: string;
 
     @Column()
-    periodoEjecucion: string;
+    descripcion: string;
 
-    @Column({ type: 'timestamptz' })
-    fechaInicio: Date;
-
-    @Column({ type: 'timestamptz' })
-    fechaFin: Date;
-
-    @CreateDateColumn({ type: 'timestamptz' })
+    @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;
 
-    @UpdateDateColumn({ type: 'timestamptz' })
-    updatedAt: Date;    
+    @UpdateDateColumn({ type: 'timestamp' })
+    updatedAt: Date;
+
 }

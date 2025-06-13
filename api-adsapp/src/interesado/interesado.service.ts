@@ -64,6 +64,7 @@ export class InteresadoService {
     this.interesadoRepository.merge(found, updateInteresadoDto);
     return this.interesadoRepository.save(found);
   }
+
   
   async remove(id: number): Promise<any> {
     const result = await this.interesadoRepository.delete(id);

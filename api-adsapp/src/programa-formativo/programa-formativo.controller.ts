@@ -3,7 +3,7 @@ import { ProgramaFormativoService } from './programa-formativo.service';
 import { CreateProgramaFormativoDto } from './dto/create-programa-formativo.dto';
 import { UpdateProgramaFormativoDto } from './dto/update-programa-formativo.dto';
 
-@Controller('programa-formativo')
+@Controller('programas-formativos')
 export class ProgramaFormativoController {
   constructor(private readonly programaFormativoService: ProgramaFormativoService) {}
 
@@ -13,7 +13,7 @@ export class ProgramaFormativoController {
   }
 
   @Get()
-  findAll() {
+  findAll(@Body() body: any) {
     return this.programaFormativoService.findAll();
   }
 

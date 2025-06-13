@@ -1,6 +1,8 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { InteresadoPf } from "src/interesado-pf/entities/interesado-pf.entity";
+import { ProgramaFormativo } from "src/programa-formativo/entities/programa-formativo.entity";
+import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity()
+@Entity('interesado')
 export class Interesado {
 
     @PrimaryGeneratedColumn()
@@ -29,4 +31,8 @@ export class Interesado {
 
     @UpdateDateColumn({ type: 'timestamp' })
     updatedAt: Date;
+
+    @OneToMany(() => InteresadoPf, intpf => intpf.interesado)
+    programas: InteresadoPf[];
+
 }
