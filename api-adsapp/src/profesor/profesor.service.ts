@@ -35,7 +35,7 @@ export class ProfesorService {
     });
 
     if (profesores.length === 0) {
-      return new HttpException('No se encontraron profesores', HttpStatus.NOT_FOUND);
+      throw new HttpException('No se encontraron profesores', HttpStatus.NOT_FOUND);
     }
 
     return profesores;

@@ -23,7 +23,7 @@ export class DiaHoraController {
   }
 
   @Get('bloque/:idBloque')
-  findbyBloque(@Query('idBloque') idBloque: string) {
+  findbyBloque(@Param('idBloque') idBloque: string) {
     return this.diaHoraService.findByBloque(+idBloque);
   }
 

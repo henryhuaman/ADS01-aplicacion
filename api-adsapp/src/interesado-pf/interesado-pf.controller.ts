@@ -31,4 +31,10 @@ export class InteresadoPfController {
   remove(@Param('id') id: string) {
     return this.interesadoPfService.remove(+id);
   }
+
+  @Get('interesado/:id')
+  findByInteresado(@Param('id') id: string) {
+    return this.interesadoPfService.findByInteresado(+id);
+  }
+
 }

@@ -99,4 +99,21 @@ export class InteresadoPfService {
     }
     return result;
   }
+
+  async findByInteresado(idInteresado: number): Promise<any> {
+    const relaciones = await this.interesadoPfRepository.find({
+      where: { interesado: { idInteresado } },
+      relations: ['programa'], // Solo necesitas cargar los programas
+    });
+
+    if (!relaciones || relaciones.length === 0) {
+      return new HttpException(
+        `No se encontraron programas para el interesado con ID ${idInteresado}`,
+        HttpStatus.NOT_FOUND
+      );
+    }
+
+    // Retornar solo los programas
+    return relaciones.map((rel) => rel.programa);
+  }
 }

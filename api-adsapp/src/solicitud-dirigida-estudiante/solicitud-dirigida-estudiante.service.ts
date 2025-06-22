@@ -51,7 +51,7 @@ export class SolicitudDirigidaEstudianteService {
 
   async findAll(): Promise<SolicitudDirigidaEstudiante[] | any> {
     const solicitudes = await this.solicitudRepository.find({
-      relations: ['interesado', 'curso'],
+      relations: ['estudiante', 'curso'],
     });
 
     if (!solicitudes || solicitudes.length === 0) {

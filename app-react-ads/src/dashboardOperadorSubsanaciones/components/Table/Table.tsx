@@ -101,7 +101,7 @@ const BasicTable: React.FC<BasicTableProps> = ({ setSelectedSolicitud }) => {
               <TableRow>
                 <TableCell>ID Solicitud</TableCell>
                 <TableCell align="left">Fecha</TableCell>
-                <TableCell align="left">Documento Solicitado</TableCell>
+                <TableCell align="left">Causa</TableCell>
                 <TableCell align="left">Acción</TableCell>
               </TableRow>
             </TableHead>

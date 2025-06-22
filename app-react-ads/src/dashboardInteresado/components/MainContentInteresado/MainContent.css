@@ -1,0 +1,126 @@
+/* dashboardInteresado/components/MainContentInteresado/MainContent.css */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.seccion-superior, 
+.seccion-central, 
+.seccion-inferior {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.opciones {
+  display: flex;
+  gap: 30px; /* Aumenté la distancia entre botones de 15px a 30px */
+  margin-top: 15px; 
+}
+
+.opcion-btn {
+  padding: 12px 24px; /* Aumenté un poco el padding */
+  background: #f0f0f0;
+  color: #333;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600; /* Hice la fuente un poco más gruesa */
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 1rem;
+}
+
+.opcion-btn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+  transform: translateY(-1px);
+}
+
+.opcion-btn.active {
+  background: #5940e3;
+  color: white;
+  border-color: #5940e3;
+  box-shadow: 0 4px 8px rgba(89, 64, 227, 0.2);
+}
+
+.datos-estudiante p {
+  margin: 8px 0;
+}
+
+.programa-select {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.confirmar-btn {
+  padding: 10px 20px;
+  background: #52c41a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilo para los botones de contribuir */
+.contribuir-btn {
+  padding: 10px 15px;
+  background: #df3b40;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 5px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.contribuir-btn:hover {
+  background: #c53237;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contribuir-btn:active {
+  transform: translateY(0);
+}
+
+.opcion-btn {
+  padding: 12px 24px;
+  background: #f0f0f0;
+  color: #333;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 1rem;
+}
+
+.opcion-btn:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+  transform: translateY(-2px);
+}
+
+.opcion-btn.active {
+  background: #5940e3;
+  color: white;
+  border-color: #5940e3;
+  box-shadow: 0 4px 8px rgba(89, 64, 227, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Efecto al hacer clic */
+.opcion-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(89, 64, 227, 0.2);
+}

@@ -74,4 +74,11 @@ export class InteresadoService {
 
     return result;
   }
+
+  async findByCredentials(correo: string, contraseña: string): Promise<Interesado | null> {
+    return this.interesadoRepository.findOne({
+      where: { correoInteresado: correo, contraseñaInteresado: contraseña },
+      select: ['idInteresado', 'nombreInteresado', 'apellidoInteresado', 'dniInteresado', 'correoInteresado', 'telefonoInteresado'] // Añade campos necesarios
+    });
+  }
 }

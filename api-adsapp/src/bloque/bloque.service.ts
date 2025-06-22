@@ -93,7 +93,7 @@ export class BloqueService {
   async findByProfesor(idProfesor: number): Promise<Bloque[] | any> {
     const exists = await this.bloqueRepository.find({
       where: { profesor: { idProfesor } },
-      relations: ['curso'],
+      relations: ['curso', 'profesor'],
     });
 
     if (exists.length === 0) {

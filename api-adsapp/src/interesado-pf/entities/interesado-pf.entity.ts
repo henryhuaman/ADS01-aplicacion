@@ -1,8 +1,10 @@
 import { Interesado } from "src/interesado/entities/interesado.entity";
 import { ProgramaFormativo } from "src/programa-formativo/entities/programa-formativo.entity";
-import { Column, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity('interesado_pf')
 export class InteresadoPf {
+
     @PrimaryGeneratedColumn()
     idMatricula: number;
 

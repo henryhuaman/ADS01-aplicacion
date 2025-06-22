@@ -12,6 +12,7 @@ import { ProfesorModule } from './profesor/profesor.module';
 import { BloqueModule } from './bloque/bloque.module';
 import { DiaHoraModule } from './dia-hora/dia-hora.module';
 import { InteresadoPfModule } from './interesado-pf/interesado-pf.module';
+import { SolicitudintModule } from './solicitudint/solicitudint.module';
 
 @Module({
   imports: [
@@ -20,8 +21,8 @@ import { InteresadoPfModule } from './interesado-pf/interesado-pf.module';
       host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'henry',
-      database: 'dbads',
+      password: 'david',
+      database: 'adsapp_db',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
@@ -36,7 +37,8 @@ import { InteresadoPfModule } from './interesado-pf/interesado-pf.module';
     ProfesorModule,
     BloqueModule,
     DiaHoraModule,
-    InteresadoPfModule
+    InteresadoPfModule,
+    SolicitudintModule,
   ],
   //controllers: [AppController],
   //providers: [AppService],

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Res, Body, Patch, Param, Delete, Query, HttpStatus } from '@nestjs/common';
 import { InteresadoService } from './interesado.service';
 import { CreateInteresadoDto } from './dto/create-interesado.dto';
 import { UpdateInteresadoDto } from './dto/update-interesado.dto';
@@ -31,5 +31,36 @@ export class InteresadoController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.interesadoService.remove(+id);
+  }
+
+  @Post('login')
+  async login(
+    @Body() body: { correo: string; contraseña: string },
+    @Res() res: any,
+  ) {
+    try {
+      const interesado = await this.interesadoService.findByCredentials(
+        body.correo,
+        body.contraseña,
+      );
+      
+      if (!interesado) {
+        return res.status(HttpStatus.UNAUTHORIZED).json({
+          message: 'Credenciales incorrectas',
+        });
+      }
+
+      return res.status(HttpStatus.OK).json({
+        idInteresado: interesado.idInteresado,
+        nombre: `${interesado.nombreInteresado} ${interesado.apellidoInteresado}`,
+        dni: interesado.dniInteresado,
+        correo: interesado.correoInteresado,
+        telefono: interesado.telefonoInteresado,
+      });
+    } catch (error) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        message: 'Error en el servidor',
+      });
+    }
   }
 }
